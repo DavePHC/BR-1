@@ -35,4 +35,4 @@ function checkAge(age) {
 checkAge(2);
 checkAge(22);
 checkAge(0);
-checkAge(-1);
+checkAge(-0);
