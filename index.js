@@ -96,35 +96,61 @@
 //   console.log(i);
 // }
 
-const phoneBook = {
+const toDo = {
   list: {
-    'Andrey Pushkin': 228228228,
-    'Alexey Bogdanov': 555555555,
-    'Artem Rudakov': 66666666,
+    "Заехать на почту": "Готово",
+    "Заехать в магазин": "В процессе",
+    "Учить JS": "Сделать",
   },
-  log() {
-    console.log(this.list);
-  }
-}
+  addTask(taskName) {
+    this.list[taskName] = "Сделать";
+  },
+  editTaskStatus(taskName, taskStatus) {
+    this.list[taskName] = taskStatus;
+  },
+  deleteTask(taskName) {
+    delete this.list[taskName];
+  },
+  showAllTasks() {},
+};
 
-function addContact (name, phone) {
-  phoneBook.list[name] = phone;
-}
+toDo.addTask("Подрочить");
+toDo.editTaskStatus("Подрочить", "Готово");
+toDo.deleteTask("Подрочить");
 
-function editContact (name, phone) {
-  phoneBook.list[name] = phone;
-}
+console.log(toDo.list);
 
-function deleteContact (name) {
-  delete phoneBook.list[name];
-}
+// phoneBook.addContact("Tolik Fedin", 89021971938);
+// phoneBook.deleteContact("Alexey Bogdanov");
 
-addContact("Alexey Hirilov", 891111111);
+// for (const name in phoneBook.list) {
+//   console.log(`${name} - ${phoneBook.list[name]}`);
+// }
 
-addContact("Nikita Denisov", 89666666);
+// console.log(phoneBook.list);
 
-editContact("Andrey Pushkin", 222222222);
+// function addContact(name, phone) {
+//   phoneBook.list[name] = phone;
+// }
 
-deleteContact("Nikita Denisov");
+// function editContact(name, phone) {
+//   phoneBook.list[name] = phone;
+// }
 
-phoneBook.log();
+// function deleteContact(name) {
+//   delete phoneBook.list[name];
+// }
+
+// addContact("Alexey Hirilov", 891111111);
+
+// addContact("Nikita Denisov", 89666666);
+
+// editContact("Andrey Pushkin", 222222222);
+
+// deleteContact("Nikita Denisov");
+
+// phoneBook.log();
+
+// let clone = Object.assign({}, phoneBook);
+
+// console.log(clone);
